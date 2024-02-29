@@ -24,7 +24,7 @@ const editFormHandler = async (event) => {
 
   console.log(response);
   if (response.ok) {
-    document.location.replace('/');
+    document.location.replace('/dashboard');
   } else {
     alert('Failed to update your post');
   }
@@ -36,7 +36,7 @@ const deleteClickHandler = async () => {
     method: 'DELETE'
   });
 
-  document.location.replace('/');
+  document.location.replace('/dashboard');
 };
 
 document
