@@ -7,7 +7,6 @@ const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 
-// Create a new sequelize store using the express-session package
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
@@ -33,7 +32,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
