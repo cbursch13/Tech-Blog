@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/comment', withAuth, async (req, res) => {
  try{ 
   const commentData = await Comment.findAll({
     include: [User],
@@ -18,7 +18,7 @@ router.get('/', withAuth, async (req, res) => {
 }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/comment', withAuth, async (req, res) => {
   const body = req.body;
 
   try {

@@ -18,7 +18,9 @@
       {{#unless loggedIn}}
       <li class="li-inline nav-item"><a href="/login">Login</a></li>
       {{/unless}}
+      {{#unless loggedIn}}
       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+      {{/unless}}
     </ul>
   </nav>
 
@@ -33,9 +35,10 @@
   <footer class="flex-row justify-center">
     &copy; Tech Blog for Coders
   </footer>
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}

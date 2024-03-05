@@ -11,7 +11,7 @@ const editFormHandler = async (event) => {
   console.log(postTitle);
   console.log(postContent);
 
-  const response = await fetch(`/api/post/${postId}`, {
+  const response = await fetch(`/api/user/post/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
       postTitle,

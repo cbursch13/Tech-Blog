@@ -1,14 +1,24 @@
 <div class="row">
   <div class="col-auto">
-    {{!-- this can not be displayed somehow --}}
-  <h2>Hi {{user.username}}! </h2>
+    <h2>Hi {{user.username}}!</h2>
   </div>
 </div>
 <br>
-{{#if posts.length}}
-<div class="card flex-column">
-  {{#each posts as |post|}}
-  {{> editItem post}}
-  {{/each}}
-</div>
+
+{{#if posts}}
+  <div class="card flex-column">
+    {{#each posts}}
+      <div class="card">
+        <div class="card-header">
+          <h3>{{postTitle}}</h3>
+          <p>Posted by {{user.username}} on {{format_date dateCreated}}</p>
+        </div>
+        <div class="card-body">
+          <p>{{postContent}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{else}}
+  <p>No posts available.</p>
 {{/if}}

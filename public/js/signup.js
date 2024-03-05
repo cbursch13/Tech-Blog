@@ -1,4 +1,3 @@
-// Function to handle form submission for user signup
 async function signupFormHandler(event) {
   event.preventDefault(); // Prevent default form submission behavior
   
@@ -10,7 +9,7 @@ async function signupFormHandler(event) {
   if (username && password) {
     try {
       // Send a POST request to the correct server endpoint for signup
-      const response = await fetch('/signup', { 
+      const response = await fetch('/api/user/signup', { 
         method: 'POST',
         body: JSON.stringify({ username, password }), // Send username and password as JSON in the request body
         headers: { 'Content-Type': 'application/json' }, // Specify content type as JSON

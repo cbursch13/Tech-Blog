@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-  Post.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -12,22 +12,21 @@ class Post extends Model {}
       autoIncrement: true,
     },
     postTitle: {
-      type: DataTypes.STRING(25),
+      type: DataTypes.STRING(255), 
       allowNull: false,
-      unique: true,
     },
     postContent: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT, 
       allowNull: false,
-      unique: true,
     },
     dateCreated: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     userId: {
       type: DataTypes.INTEGER,
+      allowNull: false, 
       references: {
         model: 'user',
         key: 'id',
